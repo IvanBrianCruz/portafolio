@@ -1,0 +1,30 @@
+/* Footer */
+.footer {
+  background-color: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 20px;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-container p {
+  color: var(--text-secondary);
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.heart {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .footer-container p {
+    font-size: 0.85rem;
+  }
+}

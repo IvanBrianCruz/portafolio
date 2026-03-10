@@ -1,0 +1,260 @@
+/* Variables de Tema: Colores Semánticos */
+
+
+/* Variables específicas para Modo Oscuro */
+[data-theme='dark'] {
+  --header-bg: #0d1117; /* Estilo GitHub Dark */
+  --header-bg-scrolled: rgba(13, 17, 23, 0.9);
+  --header-text: #c9d1d9;
+  --header-text-secondary: #8b949e;
+  --header-accent: #58a6ff;
+  --header-border: #30363d;
+  --header-hover-bg: #21262d;
+  --header-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor Principal */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-scrolled {
+  background-color: var(--header-bg-scrolled);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--header-shadow);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Sección Perfil */
+.header-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-avatar-wrapper {
+  position: relative;
+}
+
+.header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--header-accent);
+}
+
+.header-status-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #22c55e; /* Verde "Online" */
+  border-radius: 50%;
+  border: 2px solid var(--header-bg);
+}
+
+.header-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--header-text);
+  font-family: 'Courier New', Courier, monospace; /* Toque programador */
+  letter-spacing: -0.5px;
+}
+
+/* Navegación Desktop */
+.header-nav-desktop {
+  display: none; /* Oculto en móvil por defecto */
+}
+
+.header-nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav-link {
+  text-decoration: none;
+  color: var(--header-text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.header-nav-link:hover {
+  color: var(--header-accent);
+}
+
+/* Efecto subrayado animado al hover */
+.header-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--header-accent);
+  transition: width 0.3s ease;
+}
+
+.header-nav-link:hover::after {
+  width: 100%;
+}
+
+/* Sección Derecha: Acciones */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-socials {
+  display: none; /* Oculto en móviles muy pequeños si falta espacio */
+  gap: 0.8rem;
+  align-items: center;
+  border-right: 1px solid var(--header-border);
+  padding-right: 1rem;
+}
+
+.header-social-link {
+  color: var(--header-text-secondary);
+  transition: transform 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.header-social-link:hover {
+  color: var(--header-accent);
+  transform: translateY(-2px);
+}
+
+/* Interruptor de Tema (Toggle Switch) */
+.header-theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header-toggle-track {
+  width: 48px;
+  height: 24px;
+  background-color: var(--header-border);
+  border-radius: 20px;
+  position: relative;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.header-toggle-track.active {
+  background-color: var(--header-accent);
+}
+
+.header-toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: var(--header-bg);
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--header-text);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.header-toggle-track.active .header-toggle-thumb {
+  transform: translateX(24px);
+  color: var(--header-accent);
+}
+
+/* Botón Menú Hamburguesa */
+.header-menu-btn {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--header-text);
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Menú Móvil Overlay */
+.header-mobile-menu {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+  box-shadow: var(--header-shadow);
+}
+
+.header-mobile-menu.open {
+  max-height: 400px; /* Suficiente para los items */
+}
+
+.header-mobile-list {
+  list-style: none;
+  padding: 1rem 1.5rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header-mobile-link {
+  text-decoration: none;
+  color: var(--header-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+  padding: 8px 0;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .header-nav-desktop {
+    display: block;
+  }
+
+  .header-socials {
+    display: flex;
+  }
+
+  .header-menu-btn {
+    display: none;
+  }
+
+  .header-mobile-menu {
+    display: none;
+  }
+}

@@ -1,0 +1,269 @@
+/* --- Estilos Generales de la Página --- */
+.page1-container {
+  padding: 100px 20px 60px; /* Padding superior para el header fijo */
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--header-text);
+  font-family: 'Inter', sans-serif;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Header --- */
+.page1-header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--header-border);
+  padding-bottom: 20px;
+}
+
+.page1-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--header-text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  transition: color 0.2s;
+}
+
+.page1-back-btn:hover {
+  color: var(--header-accent);
+}
+
+.page1-title-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page1-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--header-text);
+}
+
+.page1-title .highlight {
+  color: #EAC926; /* Amarillo Mercado Liebre  */
+}
+
+.page1-date {
+  font-size: 1rem;
+  padding: 4px 12px;
+  background: var(--header-hover-bg);
+  border-radius: 20px;
+  color: var(--header-text-secondary);
+  font-weight: 600;
+}
+
+.page1-subtitle {
+  font-size: 1.2rem;
+  color: var(--header-text-secondary);
+  margin-top: 10px;
+  max-width: 800px;
+}
+
+/* --- Layout Grid --- */
+.page1-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Visuales más anchos */
+  gap: 40px;
+}
+
+/* --- Columna Izquierda: Visuales --- */
+.page1-carousel {
+  margin-bottom: 30px;
+}
+
+.page1-slide-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border: 1px solid var(--header-border);
+}
+
+.page1-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page1-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  transform: translateY(-50%);
+}
+
+.page1-control-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+
+.page1-control-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.page1-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--header-text-secondary);
+  margin-top: 10px;
+}
+
+/* Video Placeholder */
+.page1-video-placeholder {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, #03264C, #1259c3); /* Azules ML  */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.page1-video-placeholder:hover {
+  transform: scale(1.01);
+}
+
+.play-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* --- Columna Derecha: Detalles --- */
+.page1-section {
+  margin-bottom: 35px;
+}
+
+.page1-heading {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--header-text);
+  border-left: 4px solid #EAC926; /* Acento Amarillo */
+  padding-left: 12px;
+}
+
+.page1-text {
+  line-height: 1.7;
+  color: var(--header-text-secondary);
+  margin-bottom: 10px;
+}
+
+.page1-text strong {
+  color: var(--header-accent);
+}
+
+/* Tags */
+.page1-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.page1-tag {
+  background: var(--header-hover-bg);
+  color: var(--header-text);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: 1px solid var(--header-border);
+  font-family: 'Consolas', monospace;
+}
+
+/* Code Block (Estructura de Carpetas) */
+.page1-code-block {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  color: #d4d4d4;
+  font-family: 'Consolas', monospace;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  border: 1px solid #333;
+}
+
+/* Terminal Simulator */
+.page1-terminal {
+  background: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  font-family: 'Consolas', monospace;
+  border: 1px solid #333;
+}
+
+.terminal-header {
+  background: #2d2d2d;
+  padding: 10px 15px;
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+.terminal-body { padding: 20px; color: #fff; font-size: 0.9rem; }
+.prompt { color: #22c55e; margin-right: 8px; }
+.comment { color: #6a9955; margin-top: 8px; font-style: italic; }
+.success { color: #EAC926; margin-top: 8px; }
+
+/* Botón GitHub */
+.page1-github-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px;
+  background: var(--header-accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.page1-github-btn:hover {
+  background: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .page1-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .page1-visuals {
+    order: -1; /* Imágenes arriba en móvil */
+  }
+
+  .page1-slide-container {
+    height: 250px;
+  }
+}
