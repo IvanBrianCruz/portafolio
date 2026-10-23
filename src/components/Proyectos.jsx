@@ -1,114 +1,178 @@
-import { Link } from 'react-router-dom'; // IMPORTANTE: Importar Link
+import { useState } from 'react';
+import Header from './Header';
+import Footer from './Footer';
 import '../styles/Proyectos.css';
 
-const Projects = () => {
-  const projects = [
-    {
-      id: 1,
-      title: 'Sistema de Gestión Académica',
-      description: 'Plataforma integral para IES N°6. Digitalización de legajos, generación de PDFs y notificaciones push.',
-      image: '/proyecto-ies.jpg',
-      tech: ['Java', 'Spring Boot', 'React', 'MySQL', 'Android'],
-      route: '/proyectos/gestion-academica', // RUTA INTERNA (Componente distinto)
-      demoLink: 'https://demo-gestion.vercel.app' 
-    },
-    {
-      id: 2,
-      title: 'Mercado Liebre - Replica', // Asumiendo que este es el Page1 que hicimos
-      description: 'Réplica e-commerce con servidor Express, arquitectura MVC y diseño mobile-first.',
-      image: '/proyecto-escuela.jpg',
-      tech: ['Node.js', 'Express', 'HTML/CSS', 'MVC'],
-      route: '/proyectos/mercado-liebre', // RUTA INTERNA (Lleva a Page1)
-      demoLink: null 
-    },
-    {
-      id: 3,
-      title: 'Control RC con Arduino',
-      description: 'Vehículo robótico controlado vía Bluetooth con firmware en C++ y app móvil propia.',
-      image: '/proyecto-arduino.jpg',
-      tech: ['C++', 'Arduino', 'Bluetooth', 'Electronics'],
-      route: '/proyectos/arduino-rc', // RUTA INTERNA (Componente distinto)
-      demoLink: 'https://youtube.com/demo-video'
-    }
+// Listado completo de tus proyectos (puedes agregar, editar o quitar cuando gustes)
+const ALL_PROJECTS = [
+  {
+    id: 1,
+    title: 'Portal Web & Arcade Python - E.E.T. N° 2 San Pedro',
+    image: 'https://i.postimg.cc/tCptvVrC/image.png',
+    description:
+      'Landing page institucional con historia escolar, módulo de noticias dinámicas y sección interactiva con videojuegos en Python desarrollados por alumnos de 4° año.',
+    stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Supabase', 'Python'],
+    category: 'Full Stack & Educativo',
+    featured: true,
+  },
+  {
+    id: 2,
+    title: 'Plataforma Académica & App Móvil IES',
+    image: 'https://i.postimg.cc/QtjdZsv6/image.png',
+    description:
+      'Sistema integral de gestión de legajos, generación de analíticos en PDF y aplicación Android con notificaciones push en tiempo real. En evolución con prueba piloto estudiantil.',
+    stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Android', 'Firebase'],
+    category: 'Full Stack & Mobile',
+    featured: true,
+  },
+  {
+    id: 3,
+    title: 'Portal Institucional & CMS Escuela N° 38',
+    image: 'https://i.postimg.cc/MZFqdyZp/image.png',
+    description:
+      'Plataforma web institucional con gestor de contenidos personalizado para publicación de proyectos escolares, noticias y panel docente no técnico.',
+    stack: ['React', 'Node.js', 'CSS Modules', 'Tiny Cloud', 'SEO'],
+    category: 'Web & CMS',
+    featured: true,
+  },
+  {
+    id: 4,
+    title: 'Sistema de Reservas Aula Digital Móvil',
+    image: 'https://i.postimg.cc/sXWqmZTh/image.png',
+    description:
+      'Aplicación web ágil para gestión de turnos y reservas de equipamiento tecnológico escolar con reportes imprimibles y control automático de horarios.',
+    stack: ['JavaScript', 'Google Apps Script', 'Google Sheets API', 'HTML/CSS'],
+    category: 'Herramienta Útil',
+    featured: false,
+  },
+  {
+    id: 5,
+    title: 'Sistema de Votación Estudiantil FNE',
+    image: 'https://i.postimg.cc/zDSPfN6W/image.png',
+    description:
+      'Aplicación web de escrutinio y visualización de resultados en vivo con paneles estadísticos de alto rendimiento y concurrencia.',
+    stack: ['Java', 'Spring Boot', 'Thymeleaf', 'MySQL', 'Bootstrap'],
+    category: 'Backend & Web',
+    featured: false,
+  },
+];
+
+const Proyectos = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedTech, setSelectedTech] = useState('all');
+
+  // Obtener lista única de tecnologías para los filtros
+  const allTechnologies = [
+    'all',
+    ...new Set(ALL_PROJECTS.flatMap((p) => p.stack)),
   ];
 
+  // Filtrado de proyectos por título/descripción y tecnología seleccionada
+  const filteredProjects = ALL_PROJECTS.filter((project) => {
+    const matchesSearch =
+      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesTech =
+      selectedTech === 'all' || project.stack.includes(selectedTech);
+    return matchesSearch && matchesTech;
+  });
+
   return (
-    <section className="projects-section" id="proyectos">
-      <div className="projects-container">
-        
-        <div className="projects-header">
-          <h2 className="projects-title">Proyectos Destacados</h2>
-          <p className="projects-subtitle">
-            Una selección de mis trabajos técnicos y soluciones educativas.
+    <div className="proyectos-page-wrapper">
+      {/* 1. Header Superior */}
+      <Header />
+
+      <main className="proyectos-main">
+        {/* ================= ENCABEZADO DE LA SECCIÓN ================= */}
+        <section className="proyectos-hero">
+          <div className="proyectos-glow"></div>
+          <span className="proyectos-tag">&lt; Portafolio Profesional /&gt;</span>
+          <h1 className="proyectos-title">Proyectos Desarrollados</h1>
+          <p className="proyectos-subtitle">
+            Explora soluciones de software escalables, aplicaciones web institucionales y desarrollos educativos creados con tecnologías modernas. Haz clic en cualquier tarjeta para ver su detalle en <code>/proyectos/:id</code>.
           </p>
-        </div>
+        </section>
 
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <article key={project.id} className="project-card">
-              
-              {/* Imagen del Proyecto */}
-              <div className="project-image-wrapper">
-                <img 
-                  src={project.image} 
-                  alt={`Captura de pantalla de ${project.title}`} 
-                  className="project-image" 
-                  loading="lazy"
-                />
-                <div className="project-overlay"></div>
+        {/* ================= FILTROS Y BUSCADOR ================= */}
+        <section className="proyectos-filters-container">
+          <div className="proyectos-search-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="search-icon">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+            </svg>
+            <input
+              type="text"
+              placeholder="Buscar proyecto por nombre o descripción..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="proyectos-search-input"
+            />
+          </div>
+
+          <div className="proyectos-tech-filters">
+            {allTechnologies.map((tech) => (
+              <button
+                key={tech}
+                type="button"
+                onClick={() => setSelectedTech(tech)}
+                className={`tech-filter-btn ${selectedTech === tech ? 'active' : ''}`}
+              >
+                {tech === 'all' ? 'Todas las tecnologías' : tech}
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {/* ================= GRILLA DE CARDS DE PROYECTOS ================= */}
+        <section className="proyectos-grid-section">
+          <div className="proyectos-grid">
+            {filteredProjects.length > 0 ? (
+              filteredProjects.map((project) => (
+                <a
+                  key={project.id}
+                  href={`/proyectos/${project.id}`}
+                  className="proyecto-card"
+                >
+                  <div className="proyecto-image-wrapper">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="proyecto-image"
+                      loading="lazy"
+                    />
+                    <span className="proyecto-category-badge">{project.category}</span>
+                    <div className="proyecto-overlay-link">
+                      <span>Ver Detalle ↗</span>
+                    </div>
+                  </div>
+
+                  <div className="proyecto-content">
+                    <h2 className="proyecto-title">{project.title}</h2>
+                    <p className="proyecto-description">{project.description}</p>
+
+                    <div className="proyecto-stack">
+                      {project.stack.map((tech, idx) => (
+                        <span key={idx} className="proyecto-tech-tag">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </a>
+              ))
+            ) : (
+              <div className="proyectos-empty">
+                <p>No se encontraron proyectos con los filtros seleccionados.</p>
               </div>
+            )}
+          </div>
+        </section>
+      </main>
 
-              {/* Contenido de la Tarjeta */}
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                
-                <p className="project-description">
-                  {project.description}
-                </p>
-
-                {/* Tags de Tecnologías */}
-                <div className="project-tech-stack">
-                  {project.tech.map((tech) => (
-                    <span key={tech} className="project-tech-tag">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Botones de Acción */}
-                <div className="project-actions">
-                  
-                  {/* CAMBIO PRINCIPAL: Usamos Link en lugar de <a> */}
-                  <Link 
-                    to={project.route} 
-                    className="project-btn project-btn-outline"
-                  >
-                    Ver Detalles
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  </Link>
-
-                  {/* El demoLink sigue siendo un <a> normal porque es externo */}
-                  {project.demoLink && (
-                    <a 
-                      href={project.demoLink} 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="project-btn project-btn-fill"
-                    >
-                      Ver Demo
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-                    </a>
-                  )}
-                </div>
-              </div>
-
-            </article>
-          ))}
-        </div>
-
-      </div>
-    </section>
+      {/* 2. Footer Inferior */}
+      <Footer />
+    </div>
   );
 };
 
-export default Projects;
+export default Proyectos;

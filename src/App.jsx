@@ -1,14 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header'
-import About from './components/About'
-import Hero from './components/Hero'
-import Experiencia from './components/Experiencia'
+
+import Inicio from './components/Inicio'
+
 import Proyectos from './components/Proyectos'
-import Cursos from './components/Cursos'
+
 import Certificaciones from './components/Certificaciones'
-import Contacto from './components/Contacto'
-import Footer from './components/Footer'
+
 import './styles/globals.css'
 import './App.css'
 
@@ -23,14 +21,13 @@ function App() {
         {/* Ruta Principal (Tu Portafolio) */}
         <Route path="/" element={
           <>
-            <Header />
-            <About />
-            <Experiencia />
-            <Proyectos />
+            <Inicio />
            
           </>
         } />
 
+<Route path="/certificaciones" element={<Certificaciones />} />
+<Route path="/proyectos" element={<Proyectos />} />
         {/* Rutas Individuales para cada Proyecto */}
         <Route path="/proyectos/mercado-liebre" element={<Page1 />} />
         {/* <Route path="/proyectos/gestion-academica" element={<Page2 />} /> */}

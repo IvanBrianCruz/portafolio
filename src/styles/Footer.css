@@ -1,30 +1,377 @@
-/* Footer */
-.footer {
-  background-color: var(--card-bg);
-  border-top: 1px solid var(--border-color);
-  padding: 2rem 20px;
-  margin-top: 4rem;
-}
-
 .footer-container {
-  max-width: 1200px;
+  position: relative;
+  background-color: #060911;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5rem 1.5rem 2.5rem;
+  color: var(--text-main, #f8fafc);
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  overflow: hidden;
+}
+
+.footer-glow {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
   margin: 0 auto;
-  text-align: center;
 }
 
-.footer-container p {
-  color: var(--text-secondary);
-  margin: 0.5rem 0;
+/* =========================================================
+   1. BANNER DE CONTACTO (CTA) CON EMAIL Y TELÉFONO
+   ========================================================= */
+.footer-cta-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2.5rem 3rem;
+  margin-bottom: 4.5rem;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.55) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.65);
+}
+
+.footer-cta-text {
+  max-width: 520px;
+}
+
+.footer-cta-tag {
+  display: inline-block;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
+
+.footer-cta-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  margin: 0 0 0.6rem 0;
+  color: #f8fafc;
+  letter-spacing: -0.02em;
+}
+
+.footer-cta-desc {
+  font-size: 0.96rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.85rem;
+}
+
+.footer-direct-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  color: #090d16;
+  background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 100%);
+  box-shadow: 0 8px 20px -6px rgba(56, 189, 248, 0.45);
+  transition: all 0.25s ease;
+}
+
+.footer-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px -6px rgba(56, 189, 248, 0.65);
+  filter: brightness(1.05);
+}
+
+.footer-btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.3rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  transition: all 0.25s ease;
+}
+
+.footer-btn-whatsapp:hover {
+  background: rgba(16, 185, 129, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px rgba(16, 185, 129, 0.35);
+}
+
+.footer-copy-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.footer-btn-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1.05rem;
+  border-radius: 10px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  background: rgba(9, 13, 22, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer-btn-copy:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.copied-text {
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* =========================================================
+   2. GRILLA PRINCIPAL DEL FOOTER (3 COLUMNAS)
+   ========================================================= */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f8fafc;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.footer-bio {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  margin: 0 0 1.35rem 0;
+  max-width: 380px;
+}
+
+.footer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+}
+
+.status-ping {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.footer-col-title {
   font-size: 0.95rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: 0.02em;
 }
 
-.heart {
-  color: var(--secondary-color);
-  font-weight: bold;
+/* Etiquetas de tecnologías */
+.footer-tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-@media (max-width: 768px) {
-  .footer-container p {
-    font-size: 0.85rem;
+.footer-tech-item {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  background: rgba(30, 41, 59, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+}
+
+/* Tarjetas de redes sociales */
+.footer-social-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-social-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: rgba(30, 41, 59, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer-social-item:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.08);
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+.footer-social-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.social-handle {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+/* =========================================================
+   3. BARRA INFERIOR (COPYRIGHT & SCROLL TOP)
+   ========================================================= */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.footer-copyright strong {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.footer-scroll-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 9999px;
+  background: rgba(30, 41, 59, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer-scroll-top:hover {
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.35);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESPONSIVIDAD
+   ========================================================= */
+@media (max-width: 968px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-cta-card {
+    padding: 2rem;
+  }
+
+  .footer-cta-actions {
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-cta-card {
+    padding: 1.5rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer-cta-actions,
+  .footer-direct-btns,
+  .footer-copy-group {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer-btn-primary,
+  .footer-btn-whatsapp,
+  .footer-btn-copy {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
   }
 }
