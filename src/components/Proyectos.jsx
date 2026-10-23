@@ -47,11 +47,11 @@ const ALL_PROJECTS = [
   },
   {
     id: 5,
-    title: 'Sistema de Votación Estudiantil FNE',
+    title: 'Sistema de Votación FNE',
     image: 'https://i.postimg.cc/zDSPfN6W/image.png',
     description:
       'Aplicación web de escrutinio y visualización de resultados en vivo con paneles estadísticos de alto rendimiento y concurrencia.',
-    stack: ['Java', 'Spring Boot', 'Thymeleaf', 'MySQL', 'Bootstrap'],
+    stack: ['Java', 'Spring Boot', 'Thymeleaf', 'MySQL', 'CSS vanilla'],
     category: 'Backend & Web',
     featured: false,
   },
