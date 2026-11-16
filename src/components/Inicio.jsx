@@ -56,7 +56,7 @@ const PROJECTS = [
   {
     id: 1,
     title: 'Portal Web & Arcade Python - E.E.T. N° 2 San Pedro',
-    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80',
+    image: 'https://i.postimg.cc/tCptvVrC/image.png',
     description:
       'Landing page institucional con historia escolar, módulo de noticias y sección interactiva con videojuegos en Python creados por alumnos de 4° año.',
     stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Supabase', 'Python'],
@@ -64,7 +64,7 @@ const PROJECTS = [
   {
     id: 2,
     title: 'Plataforma Académica & App Móvil IES',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    image: 'https://i.postimg.cc/QtjdZsv6/image.png',
     description:
       'Sistema integral en evolución continua con prueba piloto estudiantil en el módulo de noticias, gestión de legajos y App Android con notificaciones push.',
     stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Android', 'Firebase'],
@@ -72,7 +72,7 @@ const PROJECTS = [
   {
     id: 3,
     title: 'Portal Institucional & CMS Escuela N° 38',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    image: 'https://i.postimg.cc/MZFqdyZp/image.png',
     description:
       'Plataforma web con gestor de contenidos personalizado para publicación de proyectos estudiantiles, noticias y panel docente.',
     stack: ['React', 'Node.js', 'CSS Modules', 'Tiny Cloud', 'SEO'],
@@ -80,7 +80,7 @@ const PROJECTS = [
   {
     id: 4,
     title: 'Sistema de Reservas Aula Digital Móvil',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80',
+    image: 'https://i.postimg.cc/sXWqmZTh/image.png',
     description:
       'Aplicación web para gestión de turnos y reservas de equipamiento tecnológico escolar con reportes imprimibles y control de horarios.',
     stack: ['JavaScript', 'Google Apps Script', 'Google Sheets API', 'HTML/CSS'],

@@ -11,7 +11,7 @@ const ALL_PROJECTS = [
     image: 'https://i.postimg.cc/tCptvVrC/image.png',
     description:
       'Landing page institucional con historia escolar, módulo de noticias dinámicas y sección interactiva con videojuegos en Python desarrollados por alumnos de 4° año.',
-    stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Supabase', 'Python'],
+    stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Supabase', 'CSS Vanilla'],
     category: 'Full Stack & Educativo',
     featured: true,
   },
@@ -21,8 +21,28 @@ const ALL_PROJECTS = [
     image: 'https://i.postimg.cc/QtjdZsv6/image.png',
     description:
       'Sistema integral de gestión de legajos, generación de analíticos en PDF y aplicación Android con notificaciones push en tiempo real. En evolución con prueba piloto estudiantil.',
-    stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Android', 'Firebase'],
+    stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Android', 'Firebase',"Supabase", 'Expo'],
     category: 'Full Stack & Mobile',
+    featured: true,
+  },
+  {
+    id: 6,
+    title: 'Propuesta Web Oficial - Desafío Digital ExpoJuy 2026',
+    image: 'https://i.postimg.cc/YSGn0Ks1/image.png',
+    description:
+     'Propuesta web desarrollada para el certamen Desafío Digital ExpoJuy 2026, orientada a difundir la agenda, expositores, espacios y novedades del evento en Jujuy.',
+    stack: ['React + Vite', 'Vercel', 'CSS Vanilla', 'JavaScript', 'HTML5'],
+    category: 'Web & Eventos',
+    featured: true,
+  },
+  {
+    id: 7,
+    title: 'API REST Atlas - Gestión Educativa IES N° 6',
+    image: 'https://i.postimg.cc/pdC75bQy/04-0.jpg',
+    description:
+      'Backend RESTful para el IES N° 6 con autenticación JWT, control de roles y preceptores, gestión de carreras, cursos, materias, noticias y flujo de solicitudes de inscripción.',
+    stack: ['Node.js', 'Express.js', 'PostgreSQL', 'Sequelize', 'JWT'],
+    category: 'Backend & Educativo',
     featured: true,
   },
   {
@@ -31,14 +51,14 @@ const ALL_PROJECTS = [
     image: 'https://i.postimg.cc/MZFqdyZp/image.png',
     description:
       'Plataforma web institucional con gestor de contenidos personalizado para publicación de proyectos escolares, noticias y panel docente no técnico.',
-    stack: ['React', 'Node.js', 'CSS Modules', 'Tiny Cloud', 'SEO'],
+    stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Supabase', 'CSS Vanilla'],
     category: 'Web & CMS',
     featured: true,
   },
   {
     id: 4,
     title: 'Sistema de Reservas Aula Digital Móvil',
-    image: 'https://i.postimg.cc/sXWqmZTh/image.png',
+    image: 'https://i.postimg.cc/L5ZhsMYN/image.png',
     description:
       'Aplicación web ágil para gestión de turnos y reservas de equipamiento tecnológico escolar con reportes imprimibles y control automático de horarios.',
     stack: ['JavaScript', 'Google Apps Script', 'Google Sheets API', 'HTML/CSS'],
@@ -51,10 +71,30 @@ const ALL_PROJECTS = [
     image: 'https://i.postimg.cc/zDSPfN6W/image.png',
     description:
       'Aplicación web de escrutinio y visualización de resultados en vivo con paneles estadísticos de alto rendimiento y concurrencia.',
-    stack: ['Java', 'Spring Boot', 'Thymeleaf', 'MySQL', 'CSS vanilla'],
+    stack: ['Java', 'Spring Boot', 'Thymeleaf', 'MySQL', 'CSS Vanilla'],
     category: 'Backend & Web',
     featured: false,
   },
+  {
+    id: 8,
+    title: 'P2P Local Bridge - Pruebas en Intranet',
+    image: 'https://i.postimg.cc/QxS0qk9f/image.png',
+    description:
+      'Utilidad CLI en Node.js y Express con proxy inverso para exponer servidores locales en la red Wi-Fi o intranet sin subir a producción, detectando IP local y reescribiendo redirecciones.',
+    stack: ['Node.js', 'Express.js', 'HTTP Proxy Middleware', 'CLI'],
+    category: 'Herramientas & Redes',
+    featured: true,
+  },
+  {
+  id: 9, 
+  title: 'NLP - Nube Local Privada (Servidor Offline)',
+  image: 'https://i.postimg.cc/x1g6jG3S/Screenshot-2026-11-15-204217.png', 
+  description:
+    'Servidor local y autónomo de intercambio de archivos a alta velocidad para redes LAN/Wi-Fi sin internet. Incluye compilación a ejecutable nativo (.exe), detección inteligente de IP de red, generador de código QR offline, almacenamiento automático en Escritorio y UI responsive moderna con Vanilla CSS.',
+  stack: ['Node.js', 'Express.js', 'Multer', 'CSS Vanilla', 'JS Vanilla', 'HTML5'],
+  category: 'Full Stack & Redes / Offline',
+  featured: true,
+},
 ];
 
 const Proyectos = () => {
@@ -89,7 +129,7 @@ const Proyectos = () => {
           <span className="proyectos-tag">&lt; Portafolio Profesional /&gt;</span>
           <h1 className="proyectos-title">Proyectos Desarrollados</h1>
           <p className="proyectos-subtitle">
-            Explora soluciones de software escalables, aplicaciones web institucionales y desarrollos educativos creados con tecnologías modernas. Haz clic en cualquier tarjeta para ver su detalle en <code>/proyectos/:id</code>.
+            Explora soluciones de software escalables, aplicaciones web institucionales y desarrollos educativos creados con tecnologías modernas.
           </p>
         </section>
 
@@ -97,8 +137,8 @@ const Proyectos = () => {
         <section className="proyectos-filters-container">
           <div className="proyectos-search-box">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="search-icon">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="m21 21-4.3-4.3"/>
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
             </svg>
             <input
               type="text"
