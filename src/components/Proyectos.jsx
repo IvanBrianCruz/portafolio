@@ -18,7 +18,7 @@ const ALL_PROJECTS = [
   {
     id: 2,
     title: 'Plataforma Académica & App Móvil IES',
-    image: 'https://i.postimg.cc/QtjdZsv6/image.png',
+    image: 'https://i.postimg.cc/GhBDdtsv/Diseno-sin-titulo-(1).webp',
     description:
       'Sistema integral de gestión de legajos, generación de analíticos en PDF y aplicación Android con notificaciones push en tiempo real. En evolución con prueba piloto estudiantil.',
     stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Android', 'Firebase',"Supabase", 'Expo'],
@@ -37,8 +37,8 @@ const ALL_PROJECTS = [
   },
   {
     id: 7,
-    title: 'API REST Atlas - Gestión Educativa IES N° 6',
-    image: 'https://i.postimg.cc/pdC75bQy/04-0.jpg',
+    title: 'API REST Atlas - Gestión y Control de Inscripciones de documentos',
+    image: 'https://i.postimg.cc/7Zm2wzYN/api-baner.webp',
     description:
       'Backend RESTful para el IES N° 6 con autenticación JWT, control de roles y preceptores, gestión de carreras, cursos, materias, noticias y flujo de solicitudes de inscripción.',
     stack: ['Node.js', 'Express.js', 'PostgreSQL', 'Sequelize', 'JWT'],
@@ -90,7 +90,7 @@ const ALL_PROJECTS = [
   title: 'NLP - Nube Local Privada (Servidor Offline)',
   image: 'https://i.postimg.cc/x1g6jG3S/Screenshot-2026-11-15-204217.png', 
   description:
-    'Servidor local y autónomo de intercambio de archivos a alta velocidad para redes LAN/Wi-Fi sin internet. Incluye compilación a ejecutable nativo (.exe), detección inteligente de IP de red, generador de código QR offline, almacenamiento automático en Escritorio y UI responsive moderna con Vanilla CSS.',
+    'Servidor local y autónomo de intercambio de archivos a alta velocidad para redes LAN/Wi-Fi sin internet. Incluye compilación a ejecutable nativo (.exe), detección de IP, generador de código QR offline.',
   stack: ['Node.js', 'Express.js', 'Multer', 'CSS Vanilla', 'JS Vanilla', 'HTML5'],
   category: 'Full Stack & Redes / Offline',
   featured: true,
