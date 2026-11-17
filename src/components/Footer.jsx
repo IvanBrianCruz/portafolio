@@ -15,7 +15,9 @@ const TECH_HIGHLIGHTS = [
   'Node.js',
   'PostgreSQL',
   'Supabase',
-  'Python',
+  'HTML5',
+  'CSS Vanilla',
+  'JavaScript',
   'Java & Spring Boot',
 ];
 
@@ -52,10 +54,10 @@ const Footer = () => {
         {/* ================= BANNER DE CONTACTO (CTA) ================= */}
         <div className="footer-cta-card">
           <div className="footer-cta-text">
-            <span className="footer-cta-tag">¿Tienes un proyecto o propuesta educativa/IT?</span>
+            <span className="footer-cta-tag">¿Tienes un proyecto o propuesta IT?</span>
             <h2 className="footer-cta-title">Trabajemos juntos</h2>
             <p className="footer-cta-desc">
-              Estoy disponible para el desarrollo de aplicaciones web Full Stack, sistemas a medida y proyectos tecnológicos educativos.
+              Estoy disponible para el desarrollo de aplicaciones web Full Stack, sistemas a medida y proyectos tecnológicos.
             </p>
           </div>
 

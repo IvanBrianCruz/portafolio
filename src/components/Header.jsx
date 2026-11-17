@@ -3,7 +3,6 @@ import '../styles/Header.css';
 
 const NAV_LINKS = [
   { name: 'Inicio', href: '/' },
-  { name: 'Experiencia', href: '#experiencia' },
   { name: 'Proyectos', href: '/proyectos' },
   //{ name: 'Cursos', href: '#cursos' },
   { name: 'Certificaciones', href: '/certificaciones' },
