@@ -9,16 +9,20 @@ const PROJECT_DATA = {
   subtitle: 'Servidor autónomo de intercambio de archivos a máxima velocidad para redes locales sin conexión a Internet',
   description: 'Solución tecnológica moderna y comercial que convierte cualquier computadora Windows en un servidor de red de alta velocidad para compartir archivos en Wi-Fi o red cableada consumiendo 0 megas de datos móviles. Compilado a .EXE nativo con interfaz SaaS y zero CDNs.',
   demoUrl: '#', 
-  githubUrl: 'https://github.com/IvanBrianCruz/NLP-Nube-Local-Privada', 
+  githubUrl: 'https://github.com/IvanBrianCruz/N.L.P._Pro/releases/download/2/NLP-NubePrivada.exe', 
   images: [
-    '/projects/nlp/Screenshot 2026-11-15 204155.png',
-    '/projects/nlp/Screenshot 2026-11-15 204217.png',
-    '/projects/nlp/Screenshot 2026-11-15 204242.png',
-    '/projects/nlp/Screenshot 2026-11-15 204254.png',
-    '/projects/nlp/Screenshot 2026-11-15 204338.png',
-    'https://i.postimg.cc/x1g6jG3S/Screenshot-2026-11-15-204217.png'
+   'https://i.postimg.cc/k4qChgzs/Screenshot-2026-11-18-122313.png',
+   'https://i.postimg.cc/rmMTYw39/Screenshot-2026-11-18-122330.png',
+   'https://i.postimg.cc/ZR4mD523/Screenshot-2026-11-18-122409.png',
+   'https://i.postimg.cc/V6mwHkpp/Screenshot-2026-11-18-122440.png',
+   'https://i.postimg.cc/rmMTYw72/Screenshot-2026-11-18-122511.png',
+   'https://i.postimg.cc/RFdmrzx2/Screenshot-2026-11-18-122917.png',
+   'https://i.postimg.cc/6Qdw0vj7/Screenshot-2026-11-18-122931.png',
+   'https://i.postimg.cc/QthDndwf/Screenshot-2026-11-18-122948.png',
+   'https://i.postimg.cc/cHhWqNGD/Screenshot-2026-11-18-123026.png'
+
   ],
-  context: 'En instituciones educativas, aulas técnicas, salas de capacitación, faenas mineras, hospitales, conferencias o parajes rurales, la conectividad a Internet suele ser limitada, lenta o nula. El intercambio de archivos pesados (videos explicativos, instaladores de software, bibliografía en PDF o entregas de trabajos) mediante pendrives USB resulta engorroso y peligroso por la propagación de malware. Se requería una solución digital ágil, segura y moderna que permitiera a docentes y participantes intercambiar archivos a la máxima velocidad de la red Wi-Fi sin gastar megas de datos y sin depender de servidores en la nube.',
+  context: 'En instituciones educativas, aulas técnicas, salas de capacitación, mineras, hospitales, conferencias o parajes rurales, la conectividad a Internet suele ser limitada, lenta o nula. El intercambio de archivos pesados (videos explicativos, instaladores de software, bibliografía en PDF o entregas de trabajos) mediante pendrives USB resulta engorroso y peligroso por la propagación de malware. Se requería una solución digital ágil, segura y moderna que permitiera a docentes y participantes intercambiar archivos a la máxima velocidad de la red Wi-Fi sin gastar megas de datos y sin depender de servidores en la nube.',
   solution: 'Diseñé y desarrollé NLP (Nube Local Privada) v2.0: una plataforma integral 100% fuera de línea construida con Node.js, Express y Multer, con un frontend puro en Vanilla CSS y Vanilla JS (Zero CDNs). Al iniciarse, crea de forma automática la carpeta compartida "NLP_Archivos_Compartidos" en el Escritorio del usuario (con soporte para OneDrive y rutas tradicionales de Windows), detecta la IP física descartando adaptadores virtuales, proyecta un código QR offline para conexión móvil instantánea y abre el navegador del anfitrión. Dispone de carga masiva Drag & Drop con progreso en tiempo real, reproductor multimedia integrado (audio, video, fotos y documentos), buscador con filtros por categoría y selector de Modo Oscuro / Claro con estética SaaS. Todo el sistema se compila en un ejecutable único nativo para Windows (.EXE) listo para operar sin requerir Node.js instalado.',
   stack: {
     backend: ['Node.js', 'Express.js', 'Multer (Multipart Upload)', 'File System API'],
@@ -103,11 +107,24 @@ const Proyecto9Detalle = () => {
             <p className="detalle-subtitle">{PROJECT_DATA.subtitle}</p>
 
             <div className="detalle-actions">
-              <a href={PROJECT_DATA.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-action-secondary">
+               {/*<a href={PROJECT_DATA.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-action-secondary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>
                 </svg>
                 Ver Repositorio en GitHub
+              </a>*/}
+               <a
+                href="https://github.com/IvanBrianCruz/N.L.P._Pro/releases/download/2/NLP-NubePrivada.exe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-action-secondary"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Descargar NLP V2.0 Pro
               </a>
             </div>
           </header>
@@ -175,7 +192,7 @@ const Proyecto9Detalle = () => {
 
               {/* Modo de Uso Rápido */}
               <section className="content-section">
-                <h2>Guía de Uso para el Anfitrión y Alumnos</h2>
+                <h2>Guía de Uso para el Usuario</h2>
                 <div className="detalle-terminal-box">
                   <div className="terminal-header">
                     <span className="terminal-dot red"></span>

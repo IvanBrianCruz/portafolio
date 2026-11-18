@@ -8,12 +8,17 @@ const PROJECT_DATA = {
   title: 'P2P Local Bridge - Pruebas en Intranet y Proxy Inverso',
   subtitle: 'Herramienta de desarrollo y puente HTTP para exponer servidores locales en redes LAN sin depender de Internet',
   description: 'Utilidad multiplataforma con Panel Web y ejecutable nativo de Windows que permite compartir cualquier proyecto web local a través de la red Wi-Fi o intranet mediante proxy inverso en el puerto 4000, detección de IP física, reescritura de redirecciones y códigos QR.',
-  demoUrl: '#', 
-  githubUrl: 'https://github.com/IvanBrianCruz/P2P-Local-Bridge', 
+  demoUrl: '#',
+  githubUrl: 'https://github.com/IvanBrianCruz/P2P-Puente-Local.git',
   images: [
-    'https://i.postimg.cc/QxS0qk9f/image.png'
+    'https://i.postimg.cc/K8B25Tjf/Screenshot-2026-11-18-114831.png',
+    'https://i.postimg.cc/dVrY9C3S/Screenshot-2026-11-18-114858.png',
+    'https://i.postimg.cc/fRmNvdyq/Screenshot-2026-11-18-120339.png',
+    'https://i.postimg.cc/9QZhB90p/Screenshot-2026-11-18-120412.png',
+    'https://i.postimg.cc/3JPhp181/Screenshot-2026-11-18-120507.png'
   ],
-  context: 'Durante clases de programación, capacitaciones y sesiones de prueba en laboratorios escolares o universitarios, es habitual necesitar probar aplicaciones web en dispositivos móviles reales (smartphones, tablets) conectados a la misma red Wi-Fi. Sin embargo, no siempre se cuenta con acceso a Internet para recurrir a herramientas en la nube como ngrok o locales locales, y los servidores de desarrollo (como Spring Boot o Express) suelen aplicar redirecciones a localhost, provocando que los dispositivos externos pierdan la conexión. Además, tipear direcciones IP numéricas en teléfonos móviles resulta lento y propenso a errores.',
+
+  context: 'Durante clases de programación, capacitaciones y sesiones de prueba en laboratorios escolares o universitarios, es habitual necesitar probar aplicaciones web en dispositivos móviles reales (smartphones, tablets) conectados a la misma red Wi-Fi. Sin embargo, no siempre se cuenta con acceso a Internet para recurrir a herramientas en la nube como ngrok o locales, y los servidores de desarrollo (como Spring Boot o Express) suelen aplicar redirecciones a localhost, provocando que los dispositivos externos pierdan la conexión. Además, tipear direcciones IP numéricas en teléfonos móviles resulta lento y propenso a errores.',
   solution: 'Diseñé y programé P2P Local Bridge, una solución autónoma que levanta un servidor HTTP y proxy inverso en el puerto 4000 capaz de redirigir el tráfico hacia cualquier puerto local (ej. 3000, 5173, 8080). El motor detecta dinámicamente las tarjetas de red físicas IPv4 descartando adaptadores virtuales (WSL, Docker, VirtualBox), reescribe cabeceras HTTP de redirección en tiempo real y ofrece un Panel Web con visor de códigos QR en alta resolución. Asimismo, empaqueté la herramienta como un ejecutable autónomo para Windows (.EXE) con pkg, posibilitando su ejecución en cualquier computadora sin necesidad de instalar Node.js ni configurar terminales.',
   stack: {
     backend: ['Node.js', 'Express.js', 'http-proxy-middleware', 'OS Network API'],
@@ -92,9 +97,23 @@ const Proyecto8Detalle = () => {
             <div className="detalle-actions">
               <a href={PROJECT_DATA.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-action-secondary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>
+                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" />
                 </svg>
-                Ver Repositorio en GitHub
+                Ver GitHub P2P
+              </a>
+
+              <a
+                href="https://github.com/IvanBrianCruz/P2P-Puente-Local/releases/download/v2.0/P2P-Local-Bridge.exe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-action-secondary"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Descargar P2P
               </a>
             </div>
           </header>
