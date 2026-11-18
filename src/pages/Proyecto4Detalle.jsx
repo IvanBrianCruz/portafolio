@@ -6,29 +6,39 @@ import '../styles/pages/ProyectoDetalle.css';
 
 const PROJECT_DATA = {
   id: 4,
-  title: 'Sistema Ágil de Reservas - Equipamiento Tecnológico',
-  subtitle: 'Solución escalable de despliegue rápido para la gestión masiva de recursos institucionales',
-  description: 'Aplicación web serverless diseñada para automatizar la gestión de turnos, préstamos y reservas de Aulas Digitales Móviles (carritos tecnológicos) y equipos compartidos en cualquier organización.',
-  demoUrl: 'https://script.google.com/macros/s/AKfycbycqRRyapZAuSJRFjzSBbO6gOY95EpkyE1CayEed6nI03cnSOFHbficI_e7fpI6pXJx/exec', // Cambiar por tu link real de la demo
-  githubUrl: 'https://github.com/IvanBrianCruz', // Cambiar por tu repositorio real
+  title: 'Sistema Inteligente de Reservas y Gestión de Turnos',
+  subtitle: 'Una solución digital flexible, escalable y personalizable para optimizar la gestión de reservas de cualquier negocio u organización',
+  description: 'Plataforma web de gestión de reservas y turnos diseñada para adaptarse a las necesidades de diferentes rubros y modelos de negocio. Desde la administración de equipamiento tecnológico hasta la reserva de servicios, espacios, instalaciones y recursos compartidos.',
+  demoUrl: 'https://script.google.com/macros/s/AKfycbysaeSEhNPbEkNijkgmEYnGOwIkw8LiBFS4G36pRxcfp4T8RLjBmOcDCN-SKYslMdWHfQ/exec', // Cambiar por tu link real de la demo
+  githubUrl: 'https://docs.google.com/spreadsheets/d/1mXc7aBF34VI64iQFdcG3I_K9bASXCZmKCA1mlm1NJbw/edit?usp=sharing', // Cambiar por tu repositorio real
   youtubeId: 'dQw4w9WgXcQ', // Cambiar por tu video demo
   images: [
-   'https://i.postimg.cc/hjYTBC8Y/Screenshot-2026-10-23-123043.png',
-   'https://i.postimg.cc/RFYKBP12/Screenshot-2026-10-23-123122.png',
-   'https://i.postimg.cc/85cMx8WQ/Screenshot-2026-10-23-123141.png'
+    "https://i.postimg.cc/vZZng5zn/Screenshot-2026-11-17-224542.png",
+    "https://i.postimg.cc/9FpTQLGy/Screenshot-2026-11-17-224204.png",
+    "https://i.postimg.cc/RZZt6wRh/Screenshot-2026-11-17-224235.png",
+    "https://i.postimg.cc/9QQ9Rypz/Screenshot-2026-11-17-224257.png",
+    "https://i.postimg.cc/bwwnD1Tt/Screenshot-2026-11-17-224334.png",
+    "https://i.postimg.cc/pLLjhKZz/Screenshot-2026-11-17-224349.png",
+    "https://i.postimg.cc/DwwGJ1g1/Screenshot-2026-11-17-224410.png",
+    "https://i.postimg.cc/httmzVr0/Screenshot-2026-11-17-224430.png",
+    "https://i.postimg.cc/GhQYmXkH/Screenshot-2026-11-17-224454.png",
+    "https://i.postimg.cc/5N3v2sww/Screenshot-2026-11-17-224625.png"
+
   ],
-  context: 'Las instituciones educativas y corporativas suelen enfrentar un caos logístico al gestionar recursos tecnológicos compartidos (laptops, proyectores, tablets). El seguimiento manual en papel o planillas estáticas genera superposición de horarios, pérdida de equipos y una gran carga administrativa. Se requería una solución tecnológica que no solo resolviera este problema, sino que estuviera pensada para un uso masivo: rápida de configurar, con cero costos de mantenimiento de servidores y fácilmente personalizable para cualquier entidad.',
-  solution: 'Diseñé una arquitectura 100% Serverless utilizando Google Apps Script y la API de Google Sheets como motor de base de datos. Esta decisión técnica permite que el sistema se despliegue en minutos en cualquier organización sin requerir infraestructura propia. La aplicación web valida la disponibilidad de los equipos en tiempo real, previene conflictos de horarios, genera reportes de uso listos para imprimir y ofrece un panel de control intuitivo. Su diseño modular permite adaptarla rápidamente a la imagen corporativa y a las reglas de negocio de distintos equipos institucionales.',
+  context: 'La organización de reservas y turnos es una necesidad presente en numerosos sectores. Comercios, empresas, instituciones y profesionales independientes suelen depender de agendas manuales, mensajes o planillas para administrar sus servicios, recursos y horarios. Estos métodos pueden generar reservas duplicadas, errores de coordinación, pérdida de información y una importante carga administrativa. Frente a esta problemática, surge la propuesta de desarrollar una solución digital que centralice la gestión, automatice las reservas y pueda adaptarse a las particularidades de cada organización.',
+  solution: 'Desarrollé una plataforma web utilizando una arquitectura Serverless basada en Google Apps Script y Google Sheets, que permite administrar reservas, horarios, disponibilidad y recursos desde un único sistema. Su principal diferencial es la flexibilidad: no está limitada a un único propósito ni a un sector específico. Puede personalizarse y configurarse a medida según las necesidades, las reglas de funcionamiento y la identidad visual de cada empresa o emprendimiento. Por ejemplo, puede adaptarse para gestionar turnos en peluquerías y centros de estética, consultas profesionales, reservas de canchas deportivas, alquiler de espacios, salas de reuniones, talleres, servicios técnicos, préstamos de equipamiento y administración de recursos institucionales. Cada implementación puede incorporar sus propias categorías, horarios, usuarios, recursos y condiciones de reserva. De esta manera, se obtiene una herramienta digital personalizada sin necesidad de desarrollar una plataforma completamente diferente desde cero.',
   stack: {
     frontend: ['HTML5', 'CSS3', 'Vanilla JavaScript'],
     backend: ['Google Apps Script (Serverless)'],
     database: ['Google Sheets API', 'Google Workspace'],
   },
   features: [
-    'Despliegue ágil y escalable: Infraestructura Serverless sin costos de hosting.',
-    'Validación en tiempo real para evitar reservas duplicadas o superposición de turnos.',
-    'Generación automática de reportes y comprobantes de préstamo listos para impresión.',
-    'Altamente personalizable: Diseño adaptable a la identidad visual de diferentes instituciones.',
+    'Gestión centralizada de reservas, turnos, horarios y disponibilidad.',
+    'Validación automática para evitar reservas duplicadas y conflictos de horarios.',
+    'Adaptable a múltiples rubros: comercios, servicios profesionales, deportes, alquileres e instituciones.',
+    'Personalización a medida: funcionalidades, reglas de negocio, categorías e identidad visual.',
+    'Generación automática de reportes y comprobantes listos para imprimir.',
+    'Implementación ágil mediante infraestructura Serverless, sin necesidad de administrar servidores propios.',
   ]
 };
 
@@ -60,11 +70,11 @@ const Proyecto4Detalle = () => {
 
       <main className="detalle-main">
         <div className="detalle-container">
-          
+
           <div className="detalle-nav-top">
             <a href="/proyectos" className="btn-back">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m15 18-6-6 6-6"/>
+                <path d="m15 18-6-6 6-6" />
               </svg>
               Volver a Proyectos
             </a>
@@ -78,34 +88,50 @@ const Proyecto4Detalle = () => {
               <a href={PROJECT_DATA.demoUrl} target="_blank" rel="noopener noreferrer" className="btn-action-primary">
                 Ver Demo en Vivo ↗
               </a>
-              {/* <a href={PROJECT_DATA.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-action-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>
+              <a
+                href={PROJECT_DATA.googleSheetUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-action-secondary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M3 9h18M3 15h18M9 9v12M15 9v12" />
                 </svg>
-                Ver Código Fuente
-              </a> */}
+                Ver Hoja de Cálculo
+              </a>
             </div>
           </header>
 
           <section className="detalle-gallery">
-            <div 
-              className="gallery-main-view" 
+            <div
+              className="gallery-main-view"
               onClick={() => setIsFullscreen(true)}
               title="Click para ver en pantalla completa"
             >
-              <img 
-                src={PROJECT_DATA.images[activeImageIndex]} 
-                alt={`Vista principal del sistema de reservas`} 
+              <img
+                src={PROJECT_DATA.images[activeImageIndex]}
+                alt={`Vista principal del sistema de reservas`}
                 className="gallery-main-img"
               />
               <div className="gallery-expand-hint">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" /></svg>
               </div>
             </div>
 
             <div className="gallery-thumbnails">
               {PROJECT_DATA.images.map((img, index) => (
-                <button 
+                <button
                   key={index}
                   type="button"
                   onClick={() => setActiveImageIndex(index)}
@@ -140,7 +166,7 @@ const Proyecto4Detalle = () => {
             <div className="content-stack-col">
               <div className="stack-card">
                 <h3>Tecnologías</h3>
-                
+
                 <div className="stack-group">
                   <h4>Frontend</h4>
                   <div className="stack-tags">
@@ -154,7 +180,7 @@ const Proyecto4Detalle = () => {
                     {PROJECT_DATA.stack.backend.map(tech => <span key={tech} className="tech-pill">{tech}</span>)}
                   </div>
                 </div>
-                
+
                 <div className="stack-group">
                   <h4>Base de Datos</h4>
                   <div className="stack-tags">
@@ -164,7 +190,7 @@ const Proyecto4Detalle = () => {
               </div>
             </div>
           </div>
- {/* Video Section 
+          {/* Video Section 
           {PROJECT_DATA.youtubeId && (
             <section className="detalle-video-section">
               <h2>Video Demostrativo</h2>
@@ -182,22 +208,22 @@ const Proyecto4Detalle = () => {
       {isFullscreen && (
         <div className="fullscreen-modal" onClick={() => setIsFullscreen(false)}>
           <button className="fullscreen-close" onClick={() => setIsFullscreen(false)}>✕</button>
-          
+
           <button className="fullscreen-nav prev" onClick={prevImage}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
           </button>
 
-          <img 
-            src={PROJECT_DATA.images[activeImageIndex]} 
-            alt="Vista expandida" 
+          <img
+            src={PROJECT_DATA.images[activeImageIndex]}
+            alt="Vista expandida"
             className="fullscreen-img"
             onClick={(e) => e.stopPropagation()}
           />
 
           <button className="fullscreen-nav next" onClick={nextImage}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
           </button>
-          
+
           <div className="fullscreen-counter">
             {activeImageIndex + 1} / {PROJECT_DATA.images.length}
           </div>

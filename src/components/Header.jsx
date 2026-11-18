@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/Header.css';
 
 const NAV_LINKS = [
   { name: 'Inicio', href: '/' },
   { name: 'Proyectos', href: '/proyectos' },
-  //{ name: 'Cursos', href: '#cursos' },
   { name: 'Certificaciones', href: '/certificaciones' },
-  { name: 'Contacto', href: '#contacto' },
+  { name: 'Contacto', href: '/#contacto' },
 ];
 
 const SOCIAL_DATA = {
@@ -18,10 +18,9 @@ const SOCIAL_DATA = {
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('#inicio');
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const location = useLocation();
 
-  // Detectar scroll para aplicar efecto glassmorphism más intenso
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -30,7 +29,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Cerrar menú móvil si se agranda la pantalla
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 968 && isMenuOpen) {
@@ -41,49 +39,65 @@ const Header = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [isMenuOpen]);
 
-  // Función para copiar el correo al portapapeles además de abrir el cliente de correo
   const handleEmailClick = () => {
     navigator.clipboard.writeText(SOCIAL_DATA.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
+  const isLinkActive = (href) => {
+    if (href === '/') return location.pathname === '/';
+    if (href.startsWith('/#')) return false;
+    return location.pathname.startsWith(href);
+  };
+
   return (
     <header className={`header-container ${scrolled ? 'header-scrolled' : ''}`}>
       <div className="header-content">
         
-        {/* Izquierda: Foto y Firma Developer */}
-        <a href="#inicio" className="header-profile" onClick={() => setActiveSection('#inicio')}>
+        {/* Izquierda: Logo personal, Foto y Firma Developer */}
+        <Link to="/" className="header-profile" aria-label="Ir al inicio del portafolio">
+          
+
           <div className="header-avatar-wrapper">
             <img 
               src="https://i.postimg.cc/nLfSwTYf/AP1Gcz-PD8n-U-u-KYf-Ijnb3C-ZD8QNUEYj.png" 
-              alt="Ivan Brian Cruz" 
+              alt="Cruz Delgado Brian Ivan" 
               className="header-avatar" 
             />
-            <span className="header-status-dot" title="Disponible para proyectos"></span>
+            <span className="header-status-dot" title="Disponible para nuevos proyectos"></span>
           </div>
+
           <div className="header-title-group">
             <h1 className="header-name">
               <span className="code-bracket">&lt;</span>
               Cruz Delgado Brian Ivan
               <span className="code-bracket"> /&gt;</span>
             </h1>
-            <span className="header-role">Full Stack Developer</span>
+            <span className="header-role">Full Stack Developer &amp; Docente IT</span>
           </div>
-        </a>
+        </Link>
 
         {/* Centro: Navegación Desktop estilo cápsula */}
         <nav className="header-nav-desktop" aria-label="Navegación principal">
           <ul className="header-nav-list">
             {NAV_LINKS.map((link) => (
               <li key={link.name} className="header-nav-item">
-                <a 
-                  href={link.href} 
-                  className={`header-nav-link ${activeSection === link.href ? 'active' : ''}`}
-                  onClick={() => setActiveSection(link.href)}
-                >
-                  {link.name}
-                </a>
+                {link.href.startsWith('/#') ? (
+                  <a 
+                    href={link.href} 
+                    className="header-nav-link"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link 
+                    to={link.href} 
+                    className={`header-nav-link ${isLinkActive(link.href) ? 'active' : ''}`}
+                  >
+                    {link.name}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -93,13 +107,13 @@ const Header = () => {
         <div className="header-actions">
           <div className="header-socials">
             
-            {/* Botón Email: Abre cliente de correo y copia al portapapeles */}
+            {/* Botón Email */}
             <a 
               href={`mailto:${SOCIAL_DATA.email}`}
               onClick={handleEmailClick}
               className="header-social-link email-btn" 
               aria-label="Enviar correo electrónico"
-              title="Enviar correo (también copia la dirección)"
+              title="Copiar correo y enviar mensaje"
             >
               {copiedEmail && <span className="copied-badge">¡Copiado!</span>}
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -140,7 +154,7 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Botón Menú Hamburguesa (Móvil) */}
+          {/* Botón Menú Móvil */}
           <button 
             type="button"
             className={`header-menu-btn ${isMenuOpen ? 'active' : ''}`} 
@@ -171,21 +185,27 @@ const Header = () => {
         <ul className="header-mobile-list">
           {NAV_LINKS.map((link) => (
             <li key={link.name} className="header-mobile-item">
-              <a 
-                href={link.href} 
-                className={`header-mobile-link ${activeSection === link.href ? 'active' : ''}`}
-                onClick={() => {
-                  setActiveSection(link.href);
-                  setIsMenuOpen(false);
-                }}
-              >
-                {link.name}
-              </a>
+              {link.href.startsWith('/#') ? (
+                <a 
+                  href={link.href} 
+                  className="header-mobile-link"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link 
+                  to={link.href} 
+                  className={`header-mobile-link ${isLinkActive(link.href) ? 'active' : ''}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
 
-        {/* Redes sociales dentro del menú móvil para pantallas muy pequeñas */}
         <div className="header-mobile-footer">
           <a href={`mailto:${SOCIAL_DATA.email}`} className="mobile-contact-pill">
             {SOCIAL_DATA.email}

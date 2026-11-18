@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import '../styles/Inicio.css';
 
-// Array de Experiencia Profesional actualizado (Orden cronológico inverso: 2026 -> 2025)
+// Array de Experiencia Profesional actualizado
 const EXPERIENCES = [
   {
     id: 1,
@@ -22,18 +22,18 @@ const EXPERIENCES = [
   },
   {
     id: 2,
-    role: 'Desarrollador Full Stack & Móvil',
-    institution: 'Institución de Educación Superior (IES)',
+    role: 'Desarrollador Full Stack (Frontend & API REST)',
+    institution: 'Instituto de Educación Superior (IES N° 6)',
     period: '2025 - Actualidad (En evolución & Prueba Piloto)',
     description:
-      'Desarrollo integral (Solo Developer) de una plataforma de gestión académica para digitalizar procesos administrativos. Actualmente el proyecto continúa en desarrollo activo, sumando nuevas funcionalidades y ejecutando una prueba piloto real en la institución con la participación de alumnos en el módulo de noticias.',
+      'Desarrollo integral (Solo Developer) de la plataforma web académica y backend RESTful (Atlas) para digitalizar procesos administrativos y académicos. Cuenta con prueba piloto activa con participación estudiantil en la gestión de noticias escolares.',
     achievements: [
-      'Prueba piloto activa: Validación en entorno real con estudiantes gestionando e interactuando en el módulo de noticias institucionales.',
-      'Desarrollo y mejora continua de API REST, Panel de Administración Web y generación de documentación en PDF.',
-      'App Móvil Android con sistema de notificaciones push en tiempo real para la comunidad educativa.',
-      'Mantenimiento evolutivo, optimización de rendimiento y despliegue continuo en producción.',
+      'Prueba piloto activa: Validación en entorno real con estudiantes redactando y publicando en el módulo de noticias institucionales.',
+      'Desarrollo de API RESTful con Sequelize ORM y PostgreSQL, con autenticación JWT y roles granulares.',
+      'Generación automatizada de analíticos y constancias de alumno regular en PDF con código QR verificable.',
+      'Mantenimiento evolutivo, optimización de consultas SQL y despliegue continuo en producción.',
     ],
-    stack: ['React + Vite', 'Node.js', 'Android', 'PostgreSQL', 'Git & GitHub', 'Supabase', 'Firebase'],
+    stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Sequelize', 'Supabase', 'Brevo API', 'Git & GitHub'],
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ const EXPERIENCES = [
   },
 ];
 
-// Array de Proyectos para el Carrusel (Al hacer click lleva a /proyectos/:id)
+// Array de Proyectos para el Carrusel
 const PROJECTS = [
   {
     id: 1,
@@ -63,11 +63,43 @@ const PROJECTS = [
   },
   {
     id: 2,
-    title: 'Plataforma Académica & App Móvil IES',
-    image: 'https://i.postimg.cc/QtjdZsv6/image.png',
+    title: 'Plataforma Académica IES - Sistema Web',
+    image: 'https://i.postimg.cc/26t86MKK/Screenshot-2026-10-23-115508.png',
     description:
-      'Sistema integral en evolución continua con prueba piloto estudiantil en el módulo de noticias, gestión de legajos y App Android con notificaciones push.',
-    stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Android', 'Firebase'],
+      'Sistema institucional web con prueba piloto estudiantil en el módulo de noticias, gestión de legajos y analíticos en PDF con validación QR.',
+    stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Supabase', 'QR Docs'],
+  },
+  {
+    id: 6,
+    title: 'Propuesta Web Oficial - Desafío Digital ExpoJuy 2026',
+    image: 'https://i.postimg.cc/YSGn0Ks1/image.png',
+    description:
+      'Portal oficial para la feria productiva ExpoJuy con directorio interactivo de expositores, agenda cronológica y pases digitales con QR.',
+    stack: ['React + Vite', 'React Router', 'CSS Vanilla', 'Pases QR'],
+  },
+  {
+    id: 7,
+    title: 'API REST Atlas - Backend sistema de gestión',
+    image: 'https://i.postimg.cc/7Zm2wzYN/api-baner.webp',
+    description:
+      'Backend RESTful en Node.js, Express y PostgreSQL con autenticación JWT, carga masiva de notas desde Excel y verificación de certificados.',
+    stack: ['Node.js', 'Express.js', 'PostgreSQL', 'Sequelize', 'JWT'],
+  },
+  {
+    id: 9,
+    title: 'NLP - Nube Local Privada (Servidor Offline)',
+    image: 'https://i.postimg.cc/x1g6jG3S/Screenshot-2026-11-15-204217.png',
+    description:
+      'Servidor autónomo offline para compartir archivos en LAN/Wi-Fi sin internet. Compilado a .EXE nativo con subida Drag & Drop y código QR.',
+    stack: ['Node.js', 'Express', 'Vanilla JS', 'Zero CDNs', '.EXE Standalone'],
+  },
+  {
+    id: 8,
+    title: 'P2P Local Bridge - Pruebas en Intranet',
+    image: 'https://i.postimg.cc/QxS0qk9f/image.png',
+    description:
+      'Proxy inverso y herramienta CLI/Web para exponer servidores de desarrollo en la red Wi-Fi local sin subir a producción ni depender de Internet.',
+    stack: ['Node.js', 'Express', 'HTTP Proxy', 'QR Generator'],
   },
   {
     id: 3,
@@ -78,11 +110,19 @@ const PROJECTS = [
     stack: ['React', 'Node.js', 'CSS Modules', 'Tiny Cloud', 'SEO'],
   },
   {
+    id: 5,
+    title: 'Sistema de Escrutinio y Votación FNE',
+    image: 'https://i.postimg.cc/zDSPfN6W/image.png',
+    description:
+      'Aplicación web de escrutinio en red local blindada con Java Spring Boot y Spring Security para elecciones estudiantiles seguras.',
+    stack: ['Java', 'Spring Boot', 'Spring Security', 'MySQL', 'Intranet'],
+  },
+  {
     id: 4,
     title: 'Sistema de Reservas Aula Digital Móvil',
-    image: 'https://i.postimg.cc/sXWqmZTh/image.png',
+    image: 'https://i.postimg.cc/L5ZhsMYN/image.png',
     description:
-      'Aplicación web para gestión de turnos y reservas de equipamiento tecnológico escolar con reportes imprimibles y control de horarios.',
+      'Aplicación web serverless para gestión de turnos y préstamos de equipamiento escolar con reportes imprimibles y control de disponibilidad.',
     stack: ['JavaScript', 'Google Apps Script', 'Google Sheets API', 'HTML/CSS'],
   },
 ];
@@ -113,27 +153,24 @@ const Inicio = () => {
           <div className="hero-container">
             {/* Columna Izquierda: Información */}
             <div className="hero-content">
-              <span className="hero-greeting">Hola, soy</span>
-              <h1 className="section-title">Cruz Delgado Brian Ivan</h1>
+              <span className="hero-greeting">&lt; Desarrollador Full Stack &amp; Docente IT /&gt;</span>
+              <h1 className="hero-title">Cruz Delgado Brian Ivan</h1>
 
               <div className="hero-subtitle-wrapper">
-                <span className="hero-role">Desarrollador Full Stack</span>
+                <span className="hero-role">Full Stack Tech Developer</span>
                 <span className="hero-divider">|</span>
-                <span className="hero-badge-it">Formación Docente en IT</span>
+                <span className="hero-badge-it">Profesor de Informática</span>
               </div>
 
               <p className="hero-description">
-                Transformo ideas complejas en <strong>software de calidad e innovador</strong>, construyendo
-                soluciones a medida. Combino la <strong>lógica técnica</strong> de tecnologías modernas (React,
-                APIs, Ecosistema JS) con las <strong>habilidades blandas</strong> adquiridas en mi formación
-                profesional docente.
+                Transformo ideas complejas en <strong>software escalable, moderno y funcional</strong>, construyendo
+                soluciones a medida tanto en el ecosistema web como en arquitecturas offline y de intranet. Combino la <strong>lógica técnica</strong> de tecnologías modernas (React,
+                Node.js, PostgreSQL, Java y Spring Boot) con las <strong>habilidades interpersonales y pedagógicas</strong> adquiridas en mi formación docente.
               </p>
 
               <p className="hero-description">
-                No solo escribo software; entiendo el valor de la <strong>comunicación clara</strong>, la
-                planificación estratégica y la documentación precisa. Mi capacidad para gestionar
-                grupos y exponer proyectos me permite integrarme en equipos ágiles, aportando
-                no solo soluciones técnicas, sino también cohesión y aprendizaje continuo.
+                No solo escribo código limpio; entiendo el valor de la <strong>comunicación asertiva</strong>, la
+                planificación estratégica y la documentación precisa. Mi experiencia liderando aulas técnicas y coordinando proyectos en producción me permite integrarme fluidamente en equipos ágiles, aportando resolución técnica, visión de producto y aprendizaje continuo.
               </p>
 
               {/* Botones de Acción */}
@@ -176,7 +213,7 @@ const Inicio = () => {
               </div>
             </div>
 
-            {/* Columna Derecha: Foto + Card de Código reubicada abajo para no tapar la cara */}
+            {/* Columna Derecha: Foto + Logo Badge + Card de Código */}
             <div className="hero-visual">
               <div className="photo-card-Tilt">
                 <img
@@ -184,26 +221,31 @@ const Inicio = () => {
                   alt="Cruz Delgado Brian Ivan"
                   className="hero-photo"
                 />
+                <div className="hero-logo-floating-badge" title="Logo Oficial Brian Iván Cruz">
+                  <img src="https://i.postimg.cc/y83nQHm6/logo.png" alt="Logo Oficial" className="hero-floating-logo-img" />
+                </div>
               </div>
 
-              {/* Ventana de código estilo macOS posicionada más abajo */}
+              {/* Ventana de código estilo macOS 
               <div className="code-window">
                 <div className="code-window-header">
                   <span className="dot red"></span>
                   <span className="dot yellow"></span>
                   <span className="dot green"></span>
-                  <span className="code-filename">developer.js</span>
+                  <span className="code-filename">brianCruz.config.js</span>
                 </div>
                 <pre className="code-content">
                   <code>
                     <span className="c-keyword">const</span> <span className="c-var">developer</span> = {'{\n'}
                     {'  '}name: <span className="c-string">"Cruz Delgado Brian Ivan"</span>,{'\n'}
-                    {'  '}skills: [<span className="c-string">"React"</span>, <span className="c-string">"Teaching"</span>],{'\n'}
-                    {'  '}hardWorker: <span className="c-bool">true</span>{'\n'}
+                    {'  '}role: <span className="c-string">"Full Stack Tech Developer"</span>,{'\n'}
+                    {'  '}teaching: <span className="c-string">"Profesor de Informática"</span>,{'\n'}
+                    {'  '}stack: [<span className="c-string">"React"</span>, <span className="c-string">"Node"</span>, <span className="c-string">"Postgres"</span>, <span className="c-string">"Java"</span>],{'\n'}
+                    {'  '}openToOpportunities: <span className="c-bool">true</span>{'\n'}
                     {'};'}
                   </code>
                 </pre>
-              </div>
+              </div>*/}
             </div>
           </div>
         </section>
@@ -220,7 +262,7 @@ const Inicio = () => {
               <h2 className="section-title">Experiencia Profesional</h2>
             </div>
             <p className="section-subtitle">
-              Soluciones tecnológicas e iniciativas pedagógicas desarrolladas desde la propuesta hasta su implementación real en instituciones educativas.
+              Soluciones tecnológicas e iniciativas pedagógicas desarrolladas desde la propuesta de arquitectura hasta su puesta en producción e impacto real en la comunidad.
             </p>
           </div>
 
@@ -266,7 +308,7 @@ const Inicio = () => {
             <div>
               <h2 className="section-title">Proyectos Destacados</h2>
               <p className="section-subtitle">
-                Explora mis desarrollos recientes. Haz clic en cualquier tarjeta para ver el detalle técnico.
+                Explora mis desarrollos más representativos. Haz clic en cualquier tarjeta para ver el estudio de caso técnico completo.
               </p>
             </div>
 

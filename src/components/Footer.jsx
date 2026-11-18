@@ -3,7 +3,7 @@ import '../styles/Footer.css';
 
 const SOCIAL_DATA = {
   email: 'ivan4912134@gmail.com',
-  phone: '3884211576',
+  phone: '+54 9 388 421-1576',
   phoneFormatted: '+54 9 388 421-1576',
   whatsappUrl: 'https://wa.me/5493884211576',
   linkedin: 'https://www.linkedin.com/in/ivan-brian-cruz-7a42b4173',
@@ -11,14 +11,13 @@ const SOCIAL_DATA = {
 };
 
 const TECH_HIGHLIGHTS = [
-  'React + Vite',
-  'Node.js',
-  'PostgreSQL',
-  'Supabase',
-  'HTML5',
-  'CSS Vanilla',
-  'JavaScript',
+   'React 18 + Vite',
+  'Node.js & Express',
+  'PostgreSQL & Supabase',
+  'Sequelize ORM',
   'Java & Spring Boot',
+  'Firebase & Brevo API',
+  'Redes LAN / P2P Offline',
 ];
 
 const Footer = () => {

@@ -7,7 +7,7 @@ import '../styles/Proyectos.css';
 const ALL_PROJECTS = [
   {
     id: 1,
-    title: 'Portal Web & Arcade Python - E.E.T. N° 2 San Pedro',
+    title: 'Portal Web - E.E.T. N° 2 San Pedro',
     image: 'https://i.postimg.cc/tCptvVrC/image.png',
     description:
       'Landing page institucional con historia escolar, módulo de noticias dinámicas y sección interactiva con videojuegos en Python desarrollados por alumnos de 4° año.',
@@ -17,11 +17,11 @@ const ALL_PROJECTS = [
   },
   {
     id: 2,
-    title: 'Plataforma Académica & App Móvil IES',
+    title: 'Plataforma Académica IES - Sistema Web',
     image: 'https://i.postimg.cc/GhBDdtsv/Diseno-sin-titulo-(1).webp',
     description:
-      'Sistema integral de gestión de legajos, generación de analíticos en PDF y aplicación Android con notificaciones push en tiempo real. En evolución con prueba piloto estudiantil.',
-    stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Android', 'Firebase',"Supabase", 'Expo'],
+      'Plataforma web para gestión académica de legajos, carreras y emisión de analíticos en PDF con verificación mediante código QR, desarrollada para el Instituto de Educación Superior N° 6.',
+    stack: ['React + Vite', 'Node.js', 'PostgreSQL', 'Vercel', 'Firebase',"Supabase", 'CSS Vanilla'],
     category: 'Full Stack & Mobile',
     featured: true,
   },
@@ -37,7 +37,7 @@ const ALL_PROJECTS = [
   },
   {
     id: 7,
-    title: 'API REST Atlas - Gestión y Control de Inscripciones de documentos',
+    title: 'API REST Atlas - Gestión y Control de documentación',
     image: 'https://i.postimg.cc/7Zm2wzYN/api-baner.webp',
     description:
       'Backend RESTful para el IES N° 6 con autenticación JWT, control de roles y preceptores, gestión de carreras, cursos, materias, noticias y flujo de solicitudes de inscripción.',
@@ -57,10 +57,10 @@ const ALL_PROJECTS = [
   },
   {
     id: 4,
-    title: 'Sistema de Reservas Aula Digital Móvil',
+    title: 'Sistema Inteligente de Reservas y Gestión de Turnos',
     image: 'https://i.postimg.cc/L5ZhsMYN/image.png',
     description:
-      'Aplicación web ágil para gestión de turnos y reservas de equipamiento tecnológico escolar con reportes imprimibles y control automático de horarios.',
+      'Aplicación web ágil para gestión de turnos y reservas de equipamiento tecnológico con reportes imprimibles y control automático de horarios y cancelaciones de turnos.',
     stack: ['JavaScript', 'Google Apps Script', 'Google Sheets API', 'HTML/CSS'],
     category: 'Herramienta Útil',
     featured: false,

@@ -17,7 +17,13 @@ const PROJECT_DATA = {
     "https://i.postimg.cc/7hVn3P1c/Screenshot-2026-10-23-112940.png",
     "https://i.postimg.cc/9Xtb513n/Screenshot-2026-10-23-113001.png",
     "https://i.postimg.cc/tJ5N3Rt6/Screenshot-2026-10-23-113030.png",
-    "https://i.postimg.cc/5y3SB9qY/Screenshot-2026-10-23-113059.png"
+    "https://i.postimg.cc/5y3SB9qY/Screenshot-2026-10-23-113059.png",
+    "https://i.postimg.cc/SxMQjs9j/Screenshot-2026-11-17-222347.png",
+    "https://i.postimg.cc/d0csCYR3/Screenshot-2026-11-17-222413.png",
+    "https://i.postimg.cc/MGJ6BS0X/Screenshot-2026-11-17-222450.png",
+    "https://i.postimg.cc/mrWL9s3P/Screenshot-2026-11-17-222511.png",
+    "https://i.postimg.cc/3wQ8GTjy/Screenshot-2026-11-17-222533.png"
+
   ],
   context: 'La Escuela Secundaria N° 38 necesitaba una presencia digital moderna para mejorar su visibilidad institucional y captar nueva matrícula. Simultáneamente, como parte de mi Residencia Profesional, identifiqué la oportunidad de convertir esta necesidad en una herramienta pedagógica: un espacio donde docentes y alumnos pudieran interactuar con la tecnología mediante la creación y publicación de contenido real.',
   solution: 'Desarrollé una plataforma web responsiva con optimización SEO para la identidad de la escuela. El núcleo del proyecto es un CMS (Content Management System) creado desde cero, equipado con un editor intuitivo (Tiny Cloud) y sistema de autenticación. Actualmente, el portal no solo difunde información oficial, sino que cuenta con una prueba piloto activa donde los propios estudiantes redactan y publican noticias, desarrollando sus competencias digitales (TIC) en un entorno de producción real.',
@@ -78,7 +84,7 @@ const Proyecto3Detalle = () => {
 
             <div className="detalle-actions">
               <a href={PROJECT_DATA.demoUrl} target="_blank" rel="noopener noreferrer" className="btn-action-primary">
-                Ver Demo en Vivo ↗
+                Ver Portal Institucional ↗
               </a>
               {/* <a href={PROJECT_DATA.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-action-secondary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
